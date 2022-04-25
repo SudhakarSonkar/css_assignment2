@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Assignment 2</title>
+    <style>
+        /* First task CSS */
+        div{
+            margin-bottom: 2%;
+        }
+        .px{
+            border: 2px solid black;
+            width: 200px;
+            font-size: 20px;
+        }
+        .vw{
+            border: 2px solid black;
+            width: 50vw;
+        }
+        .vh{
+            border: 2px solid black;
+            height: 50vh;
+        }
+        .rem{
+            border: 2px solid black;
+            font-size: 2rem;
+        }
+        ul{
+            font-size: 2em;
+        }
+
+        /* Second task CSS */
+        html body header h1{
+            color: gold;
+        }
+        html body section main h2{
+            color: red;
+        }
+
+        /* Third task CSS */
+        /* The child selector selects all elements that are the children of a specified element. */
+        article > p{
+            background-color: yellow;
+        }
+        /* The adjacent sibling selector is used to select an element that is directly after another specific element. */
+        article + div + p{
+            background-color: rgb(255, 64, 0);
+        }
+        /* The general sibling selector selects all elements that are next siblings of a specified element. */
+        article ~ div{
+            background-color: aqua;
+        }
+
+        /* Fourth task CSS */
+        .transitionclass{
+            margin-left: 30%;
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: width 2s linear 1s;
+        }
+        .transitionclass:hover {
+            width: 300px;
+            transform: skew(20deg, 10deg);
+        }
+
+    </style>
+</head>
+<body>
+    <section class="first-task">
+        <div class="px">
+            Pixels, or px, are one of the most common length units in CSS.
+            In CSS, 1 pixel is formally defined as 1/96 of an inch. All other absolute length units are based on this definition of a pixel.    
+        </div>
+        <div class="vw">
+            View width. 1vw is 1% of the width of the viewport.
+            Since this div is set to 50vw, or 50% of the viewport's width, it will take up the full width available to it. So if you resize your browser to 690 pixels wide, then the body will take up all 690 pixels in width.
+        </div>
+        <div class="vh">
+            View height. 1vh is 1% of the height of the viewport.
+            The div will fill 50% of the viewport's height. So if the browser window is 900 pixels high, the height of the div will be 450 pixels.
+        </div>
+        <div class="rem">
+            Root em. This relative unit is not affected by the size or setting of a parent element, and is instead based on the root of the document. For websites, the root of the document is the html element.    
+            In most browsers, the default font size is 16, so the font-size of html elements is 16px. So in this case, p is 20px (16 * 1.25).
+            But if a user changes their browser's default font size, then the font-size of p will scale up or down accordingly.
+        </div>
+        <div class="em">
+            <ul>
+                <li>When used with the font-size property, em inherits the font-size from its parent element:</li>
+                <ul>
+                    <li>This list item inherit the property of its root element, so its size will be 2 times increse.</li>
+                    <ul>
+                        <li>Again this list item inherit the property of its parent element, so its size will be 2 times increse.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+    </section>
+
+    <section class="second-task">
+        <header>
+            <h1>CSS Selector Chains</h1>
+        </header>
+        <main class="second">
+            <h2>Sub Heading</h2>
+        </main>
+    </section>
+
+    <section class="third-task">
+        <article>
+            <h1>Header</h1>
+            <p>Text Inside Article</p>
+        </article>
+        <div>Same level to article tag</div>
+        <p>Text outside article</p>
+    </section>
+
+    <section class="task-four">
+        <p>Hover over the below div element, to see the transition and transform effect</p>
+        <div class="transitionclass"></div>
+        <div class="transform">
+            <p>The transform property in CSS is used to change the coordinate space of the visual formatting model. This is used to add effects like skew, rotate, translate, etc on elements.</p>
+        </div>
+    </section>
+</body>
+</html>
